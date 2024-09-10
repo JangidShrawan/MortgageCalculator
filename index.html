@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+</head>
+<body>
+  <main>
+    <section class="calculation-part">
+      <header>
+        <h3>Mortgage Calculator</h3>
+        <a href="index.html">Clear All</a>
+      </header>
+      <form id="myform" novalidate>
+        <div class="mortgage-amount">
+          <label for="mor-amount">Mortgage Amount</label>
+          <div class="mor-amount input-field">
+            <span class="input-img">&#163;</span>
+            <input type="number" name="mor-amount" id="mor-amount" required>
+          </div>
+        </div>
+        <div class="mortgage-term-and-interest">
+          <div class="mortgage-term">
+            <label for="mor-term">Mortgage Term</label>
+            <div class="mor-term input-field">
+              <input type="number" name="mor-term" id="mor-term" required>
+              <span class="input-img">years</span>
+            </div>
+          </div>
+          <div class="mortgage-interest">
+            <label for="mor-interest">Interest Rate</label>
+            <div class="mor-interest input-field">
+              <input type="number" name="mor-interest" id="mor-interest" required>
+              <span class="input-img">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="mortgage-type">
+          <fieldset >
+            <legend>Mortgage Type</legend>
+            <label for="repayment">
+              <input type="radio" name="mor-type" id="repayment" value="repayment">Repayment
+            </label>
+            <label for="interest-only">
+              <input type="radio" name="mor-type" id="interest-only" value="interestonly">Interest Only
+            </label>
+          </fieldset>
+        </div>
+        <button type="submit"><img src="assets/images/icon-calculator.svg" alt="calculator icon" loading="lazy">Calculate Repayments</button>
+      </form>
+    </section>
+    <!-- Empty results start -->
+    <section class="result-part">
+      <img src="assets/images/illustration-empty.svg" alt="empty illustration icon" loading="lazy">
+      <h4>Results shown here</h4>
+
+      <p>Complete the form and click “calculate repayments” to see what 
+      your monthly repayments would be.</p>
+    </section>
+    <!-- Empty results end -->
+
+    <!-- Completed results start -->
+
+    <!-- Your results
+
+    Your results are shown below based on the information you provided. 
+    To adjust the results, edit the form and click “calculate repayments” again.
+
+    Your monthly repayments
+
+    Total you'll repay over the term -->
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>

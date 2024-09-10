@@ -1,0 +1,397 @@
+/* 
+-----------    General Styles   ------------
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --lime-color:hsl(61, 70%, 52%);
+    --lime-bcg-color:hsl(60, 61%, 88%);
+    --red-color:hsl(4, 69%, 50%);
+    --white-color:hsl(0, 0%, 100%);
+    --slate100-color:hsl(202, 86%, 94%);
+    --slate300-color:hsl(203, 41%, 72%);
+    --slate500-color:hsl(200, 26%, 54%);
+    --slate700-color:hsl(200, 24%, 40%);
+    --slate900-color:hsl(202, 55%, 16%);
+    --slate1000-color:hsl(201, 59%, 7%);
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    background-color: var(--slate100-color);
+    padding: 40px;
+}
+
+/* For Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Ensure this applies to all number inputs */
+input[type="number"] {
+    appearance: none; /* Make sure appearance is none */
+}
+
+/* 
+-----------    Main Styles   ------------
+*/
+
+main{
+    margin: 40px auto;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: var(--white-color);
+}
+
+.calculation-part{
+    border-radius: 15px 0 0 15px;
+    align-self: stretch;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--white-color);
+    min-width: 370px;
+    max-width: 390px;
+}
+
+.calculation-part header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.calculation-part header h3{
+    white-space: nowrap; 
+    color: var(--slate900-color);
+    margin-right: 60px;
+}
+
+.calculation-part header a{
+    white-space: nowrap;
+    color: var(--slate700-color);
+    font-size: .8rem;
+}
+
+.calculation-part form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.calculation-part form .input-field{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 6px 0;
+    border:1px solid var(--slate300-color);
+    border-radius: 4px;
+}
+
+.calculation-part form .input-field .input-img{
+    height: 100%;
+    background-color: var(--slate100-color);
+    padding: 7px 10px;
+    border-radius:0 4px 4px 0;
+    color:var(--slate700-color);
+    font-size: .9rem;
+}
+
+.calculation-part form .mor-amount .input-img{
+    border-radius: 4px 0 0 4px;
+}
+
+.calculation-part form input[type='number']{
+    width: 100%;
+    border:none;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.calculation-part form label, .calculation-part form legend{
+    color:var(--slate700-color);
+    font-size: .8rem;
+    margin-bottom: 5px;
+}
+
+.calculation-part fieldset{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    align-items: flex-start;
+    justify-content: center;
+    border:none;
+}
+
+.calculation-part form fieldset label{
+    width: 100%;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--slate900-color);
+    display: flex;
+    justify-content: flex-start;
+    gap:10px;
+    align-items: center;
+    border:1px solid var(--slate300-color);
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+.calculation-part .mortgage-term-and-interest{
+    display: flex;
+    gap: 10px;
+}
+
+.calculation-part button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    padding: 10px;
+    font-weight: 700;
+    color: var(--slate900-color);
+    background-color: var(--lime-color);
+    border:none;
+    border-radius: 35px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.calculation-part button img{
+    width: 15px;
+    height: 15px;
+    margin-right: 7px;
+}
+
+.result-part{
+    border-radius: 0 15px 15px 60px;
+    align-self: stretch;
+    padding: 20px;
+    background-color: var(--slate900-color);
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 360px;
+    flex-grow: 1;
+}
+
+.result-part img{
+    width: 150px;
+    margin: 0 auto;
+}
+
+.result-part h4{
+    color: var(--white-color);
+    font-size: 1.1rem;
+    margin:5px auto 15px;
+}
+
+.result-part p{
+    color: var(--slate500-color);
+    font-size: .8rem;
+    text-align: center;
+}
+
+#calculation-part-err .input-img{
+    color:var(--white-color);
+    background-color: var(--red-color);
+}
+
+#calculation-part-err{
+    border: 1px solid var(--red-color);
+}
+
+.err-message {
+    color: red;
+    font-size: 0.775rem;
+    margin-top: 5px; /* Initially hidden */
+}
+
+.final-results{
+    padding: 40px 30px 60px 30px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.final-results h3{
+    color: var(--white-color);
+    font-size: 1.1rem;
+}
+
+.final-results p{
+    text-align: start;
+}
+
+.final-results .centering-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.final-results .result-shown{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    background-color: var(--slate1000-color);
+    border-radius: 5px;
+    box-shadow: 0 -3px 0 var(--lime-color);
+}
+
+.final-results .result-shown .repay{
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--slate700-color);
+}
+
+.final-results .result-shown .repay-shown{
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--lime-color);
+}
+
+.final-results .result-shown > div{
+    display: flex;
+    flex-direction: column;
+    gap:1px;
+}
+
+.final-results .total-overdue{
+    margin-top:10px;
+}
+
+.final-results .overdue-shown{
+    color:var(--white-color);
+    font-size: 1rem;
+}
+
+
+/* 
+-----------    Active Styles   ------------
+*/
+
+.calculation-part form input:focus{
+    outline:none;
+}
+
+.calculation-part form .input-field:focus-within{
+    outline:1px solid var(--lime-color);
+    border:1px solid var(--lime-color);
+    color: var(--slate900-color);
+    font-weight: 700;
+}
+
+.calculation-part form .input-field:focus-within .input-img{
+    background-color: var(--lime-color);
+    color: var(--slate900-color);
+}
+
+.calculation-part form .input-field:focus-within input{
+    color:var(--slate900-color);
+    font-weight: 600;
+}
+
+.calculation-part form fieldset label:focus-within{
+    background-color: var(--lime-bcg-color);
+    border:1px solid var(--lime-color);
+    outline:1px solid var(--lime-color);
+    font-weight: 700;
+}
+
+.calculation-part form fieldset input:checked{
+    accent-color: var(--lime-color);
+    font-size: 0;
+    
+}
+
+
+/* 
+-----------    Media Queries   ------------
+*/
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        margin: 40px auto;
+        border-radius: 15px;
+    }
+    
+    .calculation-part,
+    .result-part {
+        min-width: 270px;
+        max-width: 300px;
+        /* Ensure both take equal height */
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    /* Adjust calculation part styles */
+    .calculation-part {
+        gap: 5px;
+    }
+
+    .calculation-part header {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .calculation-part header h4 {
+        margin-right: 0;
+    }
+
+    .calculation-part form button {
+        width: 100%;
+    }
+
+    /* Adjust result part styles */
+    .result-part {
+        border-radius: 0 0 15px 15px;
+    }
+
+    .mortgage-term-and-interest {
+        flex-direction: column;
+    }
+
+    .result-part img {
+        width: 120px;
+        margin: 0 auto;
+    }
+
+    /* Final results section adjustments */
+    .final-results h3 {
+        font-size: 1rem;
+    }
+
+    .final-results .overdue-shown{
+        font-size: 1rem;
+    }
+}
